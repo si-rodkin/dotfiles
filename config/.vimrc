@@ -1,104 +1,161 @@
-" a1ur0n vim config
-""" Set Plugins!
-" Установка плагинов по PlugInstall!
-call plug#begin('~/.vim/plugged')
+"""""""
+"
+" a1ur0n vim general config
+"
+"""""""
 
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'Valloric/YouCompleteMe'
-Plug 'jiangmiao/auto-pairs'
-Plug 'tomasr/molokai'
-Plug 'endel/vim-github-colorscheme'
-Plug 'joshdick/onedark.vim'
-Plug 'vim-airline/vim-airline'
-Plug 'itchyny/lightline.vim'
+"""""
+" Plugin manager -- Vundle
+"-----------------------------
+set nocompatible              " be iMproved, required
+filetype off                  " required
 
-Plug 'fidian/hexmode'
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
 
-call plug#end()
+"!!! PLUGINS CALL
+call vundle#begin()
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
 """
-" Airline colorscheme
-let g:airline_theme='onedark'
-
-""" map list
+" FUNCTIONAL PLUGINS
 " NerdTree
-map <C-n> :NERDTreeToggle<CR> 
+Plugin 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 
-" Window control
-map <silent> <C-h> :call WinMove('h')<CR>
-map <silent> <C-j> :call WinMove('j')<CR>
-map <silent> <C-k> :call WinMove('k')<CR>
-map <silent> <C-l> :call WinMove('l')<CR>
-map <silent> <C-q> :call WinMove('q')<CR>
+" YouCompleteMe
+Plugin 'Valloric/YouCompleteMe'
+
+" AutoPairs
+Plugin 'jiangmiao/auto-pairs'
+
+" Airline
+Plugin 'vim-airline/vim-airline'
+Plugin 'itchyny/lightline.vim'
+
 """
+" COLORSHCEMES
+" GitHub
+Plugin 'endel/vim-github-colorscheme'
 
-""" Colorschemes
-" White colorscheme
-"colorscheme github
+" OneDark
+Plugin 'joshdick/onedark.vim'
 
-" Dark colorscheme
+" Obsidian
+Plugin 'abra/vim-obsidian'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+"!!!
+
+filetype plugin indent on    " required
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"----------------------------
+
+"""""
+" Set colorscheme
 colorscheme onedark
-"""
-set number "set line number
+"----------------------------
 
+"""""
+" Set airline colorscheme
+let g:airline_theme='onedark'
+"----------------------------
+
+"""""
+" Line numbers
+set number "set line number
+"----------------------------
+
+"""""
+" Tabs
 set tabstop=4
 set expandtab
 set softtabstop=4
 set shiftwidth=4
 set smarttab
+"----------------------------
 
-set hlsearch
-set incsearch
-
-""" GUI options
-"hide tool bar
-set guioptions-=T 
-"hide menu bar
-set guioptions-=m 
-" hide scrollbars
-set guioptions-=r
-set guioptions-=L
-set guioptions-=R
-set guioptions-=l
-" GUI font
-set gfn=Consolas
-" Window Geometry
-"if has('Gvim')
-"    win 85 80
-"endif
-
-"""
-
+"""""
+" Title
 set title
+"----------------------------
 
+"""""
 " YouCompleteMe options
-let g:ycm_global_ycm_extra_conf = '/home/a1ur0n/.vim/plugged/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+" Config file
+let g:ycm_global_ycm_extra_conf = '/home/a1ur0n/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+"----------------------------
 
-" clipboard
+"""""
+" Clipboard options
 set clipboard=unnamedplus,unnamed
+"----------------------------
 
-" Кодировка по умолчанию
+"""""
+" Encoding settings
+" Encoding by default
 set encoding=utf-8
 set termencoding=utf-8
-" Формат файла по умолчанию
+
+" File format by default
 set fileformat=unix
+
 " Формат файла, который влияет на окончания строк — будет перебирать в указанном порядке
 set ffs=unix,dos,mac
+
 " Список кодировок файлов для авто-определения
 set fileencodings=utf-8,cp1251
+"----------------------------
 
-" ...
+"""""
+" HZ cho
 set showcmd
 set autoindent
 set ruler
+"----------------------------
 
-" set syntax
-filetype plugin indent on
+"""""
+" Set syntax hightlighting
 syntax on
+"----------------------------
 
-" search local settings
+"""""
+" Auto search local settings
 set exrc
 set secure
+"----------------------------
 
+"""""
+" Key bindings
+"""
+" Window control (using function MinMove)
+map <silent> <C-h> :call WinMove('h')<CR>
+map <silent> <C-j> :call WinMove('j')<CR>
+map <silent> <C-k> :call WinMove('k')<CR>
+map <silent> <C-l> :call WinMove('l')<CR>
+map <silent> <C-q> :call WinMove('q')<CR>
+"-------------
+"""""
+" NerdTree
+map <C-n> :NERDTreeToggle<CR>
+"-------------
+"""""
+" Russin control keys
+" TODO
+" ------------
+"----------------------------
+
+"""""
+" Functions
+"""
+" Window control function
 set cursorline
 function! WinMove(key)
     let t:curwin = winnr()
@@ -112,7 +169,9 @@ function! WinMove(key)
         exec "wincmd ".a:key
     endif
 endfunction
-
+"-------------
+"""
+" For colorschemes in terminal
 "Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
 "If you're using tmux version 2.2 or later, you can remove the outermost $TMUX check and use tmux's 24-bit color support
 "(see < http://sunaku.github.io/tmux-24bit-color.html#usage > for more information.)
@@ -128,3 +187,8 @@ if (empty($TMUX))
     set termguicolors
   endif
 endif
+"-------------
+"----------------------------
+
+"""""
+" 

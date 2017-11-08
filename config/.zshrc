@@ -7,11 +7,15 @@
 PROMPT='[ %B%F{blue}%~%f%b ] %B%F{green}$%f%b '
 
 ###
+# Global Variables
+export EDITOR=/usr/bin/vim
+
+###
 # Syntax Highlighting
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-ZSH_HIGHLIGHT_STYLES[command]='fg=blue,bold' 
-ZSH_HIGHLIGHT_STYLES[alias]='fg=blue,bold'
-ZSH_HIGHLIGHT_STYLES[default]='fg=blue,bold'
+#source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+#ZSH_HIGHLIGHT_STYLES[command]='fg=blue,bold' 
+#ZSH_HIGHLIGHT_STYLES[alias]='fg=blue,bold'
+#ZSH_HIGHLIGHT_STYLES[default]='fg=blue,bold'
 
 ###
 # Autocomplite
@@ -32,10 +36,14 @@ setopt correctall
 # std
 alias p='sudo sp'
 alias q='exit'
+alias ls='ls --color'
+
+alias p='sudo sp'
 
 # My scripts
 alias getbs='~/.bin/python_sysadm_scripts/get_bat_charge.py'
 
 # Command aliases
 alias upsetzsh='source ~/.zshrc'
+alias nmrest='sudo /etc/init.d/NetworkManager restart'
 
