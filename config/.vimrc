@@ -46,6 +46,9 @@ Plugin 'joshdick/onedark.vim'
 " Obsidian
 Plugin 'abra/vim-obsidian'
 
+" Xcode
+Plugin 'cohlin/vim-colorschemes'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 "!!!
@@ -66,6 +69,7 @@ colorscheme onedark
 """""
 " Set airline colorscheme
 let g:airline_theme='onedark'
+"let g:airline_theme="edocx"
 "----------------------------
 
 """""
