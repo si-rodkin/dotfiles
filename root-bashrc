@@ -1,0 +1,25 @@
+# .bashrc
+
+. .profile
+
+RED="\[\033[01;31m\]"
+GREEN="\[\033[01;32m\]"
+BLUE="\[\033[01;34m\]"
+CYAN="\[\033[01;36m\]"
+CLOSECOLOR="\[\033[00m\]"
+
+#PS1="[ $RED\u$CLOSECOLOR$GREEN@$CLOSECOLOR$RED\h$CLOSECOLOR $BLUE\w$CLOSECOLOR ] $RED#$CLOSECOLOR ";
+PS1=" $RED> $CLOSECOLOR$CYAN\d \t$CLOSECOLOR$RED <$CLOSECOLOR\n[$GREEN host:$CLOSECOLOR $RED\h$CLOSECOLOR: $CYAN\w$CLOSECOLOR ] $RED#$CLOSECOLOR> ";
+
+# User specific aliases and functions
+
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+
+#alias yum='yum --color'
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
