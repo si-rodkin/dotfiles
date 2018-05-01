@@ -1,0 +1,28 @@
+# /etc/skel/.bashrc
+#
+
+#####
+# Prompt
+## Colors
+# solid
+RED="\[\033[01;31m\]"
+GREEN="\[\033[01;32m\]"
+YELLOW="\[\033[01;33m\]"
+BLUE="\[\033[01;34m\]"
+PURPL="\[\033[01;35m\]"
+CYAN="\[\033[01;36m\]"
+CLOSECOLOR="\[\033[00m\]"
+
+#default
+#PS1=\[\033]0;\u@\h:\w\007\]\[\033[01;32m\]\u@\h\[\033[01;34m\] \w \$\[\033[00m\]
+#castom
+PS1="[ $BLUE\w$CLOSECOLOR ] $GREEN\$$CLOSECOLOR "
+
+alias q="exit"
+alias ls="ls --color -F"
+alias p=" sudo sp"
+alias yandex-disk="yandex-disk --dir=/home/a1ur0n/Clouds/YandexDisk "
+# Put your fun stuff here.
+
+. ~/.bash_scripts/customScripts
+
