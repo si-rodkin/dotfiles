@@ -2,9 +2,9 @@
 !URxvt.title: terminal urxvt
 
 URxvt.scrollBar: false
-URxvt.geometry: 81x25
+URxvt.geometry: 110x35
 
-URxvt.font: xft:Ubuntu Mono:size=10.5
+URxvt.font: xft:Ubuntu Mono:size=9.5
 
 URxvt.iconFile: /home/a1ur0n/Pictures/Icons/terminal.png
 
@@ -15,9 +15,11 @@ URxvt.cursorBlink: true
 ! Colors !
 ! Linux colors
 !URxvt*background: #2a323b
-URxvt*background: #2c3337
+!URxvt*background: #2c3337
+URxvt*background: #eeeeec
 ! Lavanda
-URxvt*foreground: #e6e6fa
+!URxvt*foreground: #e6e6fa
+URxvt*foreground: #2e3436
 ! black
 URxvt*color0:  #000000
 URxvt*color8:  #686868
