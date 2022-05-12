@@ -45,6 +45,10 @@ zstyle ':completion:*:warnings' format '%BSorry, no matches for: %d%b'
 setopt correctall
 
 ###
+# Autosuggestions
+source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+###
 # Aliases
 
 # std
