@@ -1,6 +1,6 @@
 """""""
 "
-" a1ur0n vim general config
+" rodkinsi vim general config
 "
 """""""
 
@@ -37,17 +37,13 @@ Plugin 'itchyny/lightline.vim'
 
 """
 " COLORSHCEMES
-" GitHub
-Plugin 'endel/vim-github-colorscheme'
-
-" OneDark
-Plugin 'joshdick/onedark.vim'
-
 " Obsidian
 Plugin 'abra/vim-obsidian'
 
-" Xcode
-Plugin 'cohlin/vim-colorschemes'
+""
+" Markdown preview
+""
+Plugin 'iamcco/markdown-preview.nvim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -63,13 +59,19 @@ filetype plugin indent on    " required
 
 """""
 " Set colorscheme
-colorscheme onedark
+colorscheme obsidian
 "----------------------------
+
+
+"set keymap=russian-jcukenwin
 
 """""
 " Set airline colorscheme
-let g:airline_theme='onedark'
-"let g:airline_theme="edocx"
+"let g:airline_theme='github'
+let g:airline#extensions#keymap#enabled = 0
+let g:airline_section_z = "Строка:%l/%L Столбец:%c"
+"let g:airline_powerline_fonts = 1
+"let g:Powerline_symbols='unicode'
 "----------------------------
 
 """""
@@ -94,7 +96,7 @@ set title
 """""
 " YouCompleteMe options
 " Config file
-let g:ycm_global_ycm_extra_conf = '/home/a1ur0n/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf = '/home/sir/.ycm_extra_conf.py'
 "----------------------------
 
 """""
