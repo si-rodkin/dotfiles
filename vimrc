@@ -42,6 +42,8 @@ Plugin 'abra/vim-obsidian'
 
 ""
 " Markdown preview
+"
+" Note: после установки выполнить `call mkdp#util#install()`
 ""
 Plugin 'iamcco/markdown-preview.nvim'
 
@@ -147,6 +149,8 @@ map <silent> <C-j> :call WinMove('j')<CR>
 map <silent> <C-k> :call WinMove('k')<CR>
 map <silent> <C-l> :call WinMove('l')<CR>
 map <silent> <C-q> :call WinMove('q')<CR>
+" MarkdownPreview
+map <C-p> <Plug>MarkdownPreviewToggle
 "-------------
 """""
 " NerdTree
