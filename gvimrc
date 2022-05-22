@@ -16,12 +16,9 @@ set gfn=Consolas\ 10
 "    win 85 80
 "endif
 
-colorscheme github
-let g:airline_theme="edocx"
-
 set guiheadroom=0
 
 " Airline colorscheme
 "let g:airline_theme='github'
 
-win 85 80
+win 120 50
